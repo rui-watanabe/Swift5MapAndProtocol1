@@ -41,7 +41,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
             //get latitude and longitude
             
             //chenge address
-            
+            let tapPoint = sender.location(in: view)
+        }
+    }
+    
+    func convert(lat: CLLocationDegrees, long:CLLocationDegrees)
+    {
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: lat, longitude: long)
+        
+        //closure
+        geocoder.reverseGeocodeLocation(location)
+        { (placeMark, error) in
+            if let placeMark = placeMark
+            {//not nil placeMark
+                if let pm = placeMark.first
+                {//not nil placeMark.first
+                    if pm.administrativeArea != nil || pm.locality != nil
+                    {
+                        self.addressString = pm.name! + pm.administrativeArea! + pm.locality!
+                    }
+                    else
+                    {
+                        self.addressString = pm.name!
+                    }
+                    
+                    self.addressLabel.text = self.addressString
+                }
+            }
         }
     }
     
