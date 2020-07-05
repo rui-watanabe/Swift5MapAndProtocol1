@@ -18,7 +18,7 @@ class NextViewController: UIViewController {
     
     @IBOutlet weak var longTextField: UITextField!
     
-    var delegate:searchLocationDelegate
+    var delegate:searchLocationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,15 @@ class NextViewController: UIViewController {
     
     
     @IBAction func okAction(_ sender: Any) {
+        let latValue = latTextField.text!
+        let longValue = longTextField.text!
         
+        delegate?.searchLocation(latValue: latValue, longValue: longValue)
+        
+        if latTextField.text != nil && longTextField.text != nil
+        {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
 }
