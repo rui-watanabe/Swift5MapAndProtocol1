@@ -99,7 +99,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
             let latString = latValue
             let longString = longValue
             
+            let cordinate = CLLocationCoordinate2DMake(Double(latString)!, Double(longString)!)
             
+            //detarmin range
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            
+            let region = MKCoordinateRegion(center: cordinate, span: span)
+            
+            //set mapView
+            mapView.setRegion(region, animated: true)
+            
+            convert(lat: Double(latString)!, long: Double(longString)!)
+            
+            addressLabel.text = addressString
+        }
+        else
+        {
+            addressLabel.text = "can`t inidicate"
         }
     }
 }
