@@ -8,23 +8,25 @@
 
 import UIKit
 
-class NextViewController: UIViewController {
+protocol searchLocationDelegate {
+    func searchLocation(latValue: String, longValue: String)
+}
 
+class NextViewController: UIViewController {
+    
+    @IBOutlet weak var latTextField: UITextField!
+    
+    @IBOutlet weak var longTextField: UITextField!
+    
+    var delegate:searchLocationDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func okAction(_ sender: Any) {
+        
     }
-    */
 
 }

@@ -81,5 +81,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
         }
     }
     
+    @IBAction func goToSearchVC(_ sender: Any) {
+        performSegue(withIdentifier: "next", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "next"
+        {
+            let nextC = segue.destination as! NextViewController
+            
+        }
+    }
 }
 
