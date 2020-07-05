@@ -18,6 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
     
     var locManager:CLLocationManager!
     
+    var addressString = ""
+    
     @IBOutlet weak var addressLabel: UILabel!
     
     @IBOutlet weak var settingButton: UIButton!
@@ -30,10 +32,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
     }
 
     @IBAction func longPressTap(_ sender: UILongPressGestureRecognizer) {
-        //start tapping
-        
-        
-        //finished tapp
+        if sender.state == .began
+        {//start tapping
+            
+        }
+        else if sender.state == .ended
+        {//finished tapp
+            //get latitude and longitude
+            
+            //chenge address
+            
+        }
     }
     
 }
