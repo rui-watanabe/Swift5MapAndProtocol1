@@ -42,6 +42,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
             
             //chenge address
             let tapPoint = sender.location(in: view)
+            
+            //get latitude and longitude from tapPoint
+            let center = mapView.convert(tapPoint, toCoordinateFrom: mapView)
+            
+            let lat = center.latitude
+            let long = center.longitude
+            
+            convert(lat: lat, long: long)
+            
         }
     }
     
