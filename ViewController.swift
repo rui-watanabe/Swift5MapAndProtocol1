@@ -11,7 +11,9 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
-
+    
+    @IBOutlet var longPress: UILongPressGestureRecognizer!
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locManager:CLLocationManager!
@@ -27,6 +29,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
         settingButton.layer.cornerRadius = 20.0
     }
 
-
+    @IBAction func longPressTap(_ sender: UILongPressGestureRecognizer) {
+        //start tapping
+        
+        
+        //finished tapp
+    }
+    
 }
 
