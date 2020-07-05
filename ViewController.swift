@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, searchLocationDelegate {
     
     @IBOutlet var longPress: UILongPressGestureRecognizer!
     
@@ -88,7 +88,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "next"
         {
-            let nextC = segue.destination as! NextViewController
+            let nextVC = segue.destination as! NextViewController
+            nextVC.delegate = self
+        }
+    }
+    
+    func searchLocation(latValue: String, longValue: String) {
+        if latValue.isEmpty != true && longValue.isEmpty != true
+        {
+            let latString = latValue
+            let longString = longValue
+            
             
         }
     }

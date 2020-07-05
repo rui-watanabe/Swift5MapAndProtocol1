@@ -28,11 +28,11 @@ class NextViewController: UIViewController {
     @IBAction func okAction(_ sender: Any) {
         let latValue = latTextField.text!
         let longValue = longTextField.text!
-        
-        delegate?.searchLocation(latValue: latValue, longValue: longValue)
-        
+                
         if latTextField.text != nil && longTextField.text != nil
         {
+            delegate?.searchLocation(latValue: latValue, longValue: longValue)
+
             dismiss(animated: true, completion: nil)
         }
     }
